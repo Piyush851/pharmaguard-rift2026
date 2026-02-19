@@ -57,7 +57,7 @@ def generate_explanation(drug_name: str, pharmacogenomic_profile: dict, risk_lab
         return json.loads(completion.choices[0].message.content)
         
     except Exception as e:
-        print(f"🚨 Live API Error: {e}")
+        print(f"Live API Error: {e}")
         return {
             "summary": "Explanation generation failed due to API error.",
             "biological_mechanism": "N/A",

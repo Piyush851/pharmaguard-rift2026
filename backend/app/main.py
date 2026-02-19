@@ -7,9 +7,10 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Enable CORS for React integration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"], # Update to your frontend's deployed URL later
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

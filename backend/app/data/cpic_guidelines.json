@@ -1,64 +1,33 @@
 {
   "CYP2C19": {
-    "*2/*3": "Poor Metabolizer",
-    "*1/*2": "Intermediate Metabolizer",
-    "*1/*1": "Normal Metabolizer"
-  },
-
-  "CYP2D6": {
-    "*4/*4": "Poor Metabolizer",
     "*1/*1": "Normal Metabolizer",
-    "*1/*2": "Ultra Rapid Metabolizer"
+    "*1/*2": "Intermediate Metabolizer",
+    "*2/*2": "Poor Metabolizer",
+    "*2/*3": "Poor Metabolizer",
+    "*1/*17": "Rapid Metabolizer",
+    "*17/*17": "Ultrarapid Metabolizer"
   },
-
-  "CYP2C9": {
-    "*3/*3": "Poor Metabolizer",
-    "*1/*3": "Intermediate Metabolizer",
-    "*1/*1": "Normal Metabolizer"
+  "CYP2D6": {
+    "*1/*1": "Normal Metabolizer",
+    "*1/*2": "Normal Metabolizer",
+    "*4/*4": "Poor Metabolizer",
+    "*5/*5": "Poor Metabolizer",
+    "*1/*1xN": "Ultrarapid Metabolizer",
+    "*2/*2xN": "Ultrarapid Metabolizer"
   },
-
   "drug_recommendations": {
-
     "Clopidogrel": {
-      "Poor Metabolizer": {
-        "risk": "Ineffective",
-        "severity": "High"
-      },
-      "Normal Metabolizer": {
-        "risk": "Safe",
-        "severity": "Low"
-      }
+      "Normal Metabolizer": { "risk": "Safe", "severity": "none" },
+      "Rapid Metabolizer": { "risk": "Safe", "severity": "none" },
+      "Ultrarapid Metabolizer": { "risk": "Safe", "severity": "none" },
+      "Intermediate Metabolizer": { "risk": "Adjust Dosage", "severity": "moderate" },
+      "Poor Metabolizer": { "risk": "Ineffective", "severity": "high" }
     },
-
     "Codeine": {
-      "Poor Metabolizer": {
-        "risk": "Ineffective",
-        "severity": "Moderate"
-      },
-      "Ultra Rapid Metabolizer": {
-        "risk": "Toxic",
-        "severity": "High"
-      },
-      "Normal Metabolizer": {
-        "risk": "Safe",
-        "severity": "Low"
-      }
-    },
-
-    "Warfarin": {
-      "Poor Metabolizer": {
-        "risk": "Toxic",
-        "severity": "High"
-      },
-      "Intermediate Metabolizer": {
-        "risk": "Adjust Dosage",
-        "severity": "Moderate"
-      },
-      "Normal Metabolizer": {
-        "risk": "Safe",
-        "severity": "Low"
-      }
+      "Normal Metabolizer": { "risk": "Safe", "severity": "none" },
+      "Intermediate Metabolizer": { "risk": "Adjust Dosage", "severity": "low" },
+      "Poor Metabolizer": { "risk": "Ineffective", "severity": "moderate" },
+      "Ultrarapid Metabolizer": { "risk": "Toxic", "severity": "critical" }
     }
-
   }
 }
