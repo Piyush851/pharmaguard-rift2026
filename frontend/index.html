@@ -2,12 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    <meta name="description" content="PharmaGuard — AI-powered pharmacogenomic risk prediction system. Analyzes patient VCF files to predict drug reactions aligned with CPIC guidelines." />
+    
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <title>PharmaGuard · Pharmacogenomic Risk Prediction</title>
+    
+    <style>
+      /* Initial loading screen */
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        background: #020408;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      #initial-loader.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .init-logo {
+        font-family: 'system-ui', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #00c8aa;
+        letter-spacing: -0.02em;
+        animation: init-pulse 1s ease-in-out infinite alternate;
+      }
+      @keyframes init-pulse {
+        from { opacity: 0.4; }
+        to { opacity: 1; }
+      }
+    </style>
   </head>
   <body>
+    <div id="initial-loader">
+      <div class="init-logo">PharmaGuard</div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Remove loader once React mounts
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loader = document.getElementById('initial-loader')
+          if (loader) {
+            loader.classList.add('hidden')
+            setTimeout(() => loader.remove(), 600)
+          }
+        }, 300)
+      })
+    </script>
   </body>
 </html>
