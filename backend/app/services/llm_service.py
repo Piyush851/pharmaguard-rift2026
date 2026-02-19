@@ -17,7 +17,7 @@ def generate_explanation(drug_name: str, pharmacogenomic_profile: dict, risk_lab
     """
     Takes deterministic data and generates a strictly formatted explanation using Groq's JSON mode.
     """
-    print(f"🧠 [LIVE API] Generating explainable AI report for {drug_name}...")
+    print(f"[LIVE API] Generating explainable AI report for {drug_name}...")
     
     # We heavily enforce the JSON structure directly in the prompt
     system_prompt = """You are an expert clinical pharmacogenomic AI. 
