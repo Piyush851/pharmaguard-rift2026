@@ -238,10 +238,10 @@ export default function JsonExport({ result }) {
                 boxShadow: val === true ? '0 0 6px rgba(0,230,118,0.5)' : 'none',
               }} />
               <span className="font-mono" style={{ fontSize: '0.62rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                {key.replace(/_/g, ' ')}: 
+                {key.replace(/_/g, ' ')}:
               </span>
-              <span className="font-mono" style={{ 
-                fontSize: '0.62rem', 
+              <span className="font-mono" style={{
+                fontSize: '0.62rem',
                 color: val === true ? 'var(--safe)' : val === false ? 'var(--toxic)' : 'var(--text-secondary)',
                 fontWeight: 600
               }}>

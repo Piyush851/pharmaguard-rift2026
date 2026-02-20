@@ -38,12 +38,11 @@ def generate_explanation(drug_name: str, pharmacogenomic_profile: dict, risk_lab
     Patient Phenotype: {pharmacogenomic_profile.get('phenotype', 'Unknown')}
     Patient Diplotype: {pharmacogenomic_profile.get('diplotype', 'Unknown')}
     Detected Variants: {pharmacogenomic_profile.get('detected_variants', [])}
-    
+
     Generate the explainable clinical report based on CPIC guidelines.
     """
 
     try:
-        # Swap from .parse() to standard .create() with JSON object format
         completion = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
             messages=[
@@ -52,10 +51,10 @@ def generate_explanation(drug_name: str, pharmacogenomic_profile: dict, risk_lab
             ],
             response_format={"type": "json_object"}
         )
-        
+
         # Manually parse the JSON string returned by the model back into a Python dictionary
         return json.loads(completion.choices[0].message.content)
-        
+
     except Exception as e:
         print(f"Live API Error: {e}")
         return {

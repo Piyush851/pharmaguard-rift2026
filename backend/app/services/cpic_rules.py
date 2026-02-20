@@ -4,7 +4,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "data", "cpic_guidelines.json")
 
-# Failsafe if the JSON file is missing during testing
 try:
     with open(DATA_PATH, "r") as file:
         CPIC_DATA = json.load(file)

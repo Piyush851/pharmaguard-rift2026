@@ -9,7 +9,7 @@ class RiskAssessment(BaseModel):
 
 class VariantInfo(BaseModel):
     rsid: str
-    # Add other variant details as needed by your parser
+    # Add other variant details as needed by parser
 
 class PharmacogenomicProfile(BaseModel):
     primary_gene: str

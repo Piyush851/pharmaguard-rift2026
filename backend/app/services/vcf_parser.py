@@ -1,6 +1,6 @@
 SUPPORTED_GENES = {"CYP2C19", "CYP2D6", "TPMT", "SLCO1B1", "DPYD", "UGT1A1"}
 
-# Add this strict mapping
+# Add strict mapping
 DRUG_TO_GENE = {
     "CLOPIDOGREL": "CYP2C19",
     "CODEINE": "CYP2D6",
